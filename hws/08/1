@@ -1,0 +1,4 @@
+               naive: 5.98 microseconds
+            unrolled: 4.70 microseconds
+          vectorized: 0.01 microseconds
+ vectorized unrolled: 0.01 microseconds

@@ -1,0 +1,9 @@
+1. run + args
+2. break ... if
+3. next
+4. step
+5. continue/c
+6. set watch point by watch <line #>
+7. display x
+8. info scope <function name>; info vars; info locals
+

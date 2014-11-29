@@ -1,0 +1,26 @@
+CS61C Fa13 Homework 5
+Name: Hanyu Zhang
+Login cs61c-ak
+
+Problem 1:
+Remember to include an explanation for each mis rate!
+
+a. 100%
+a[0] and a[128] will map to the same cache block and will cause conflicts. The the first loop of i , there are compulsory miss and conflict.  
+
+b. 66.7%  (or 100%)
+a[127] and a[254] will be in the same cache block if a[0] is aligned. In the first loop, there will be 2 compulsory misses and one conflict miss. After that there are 2 conflict miss in each loop, causing a miss rate (3+2*9999)/30000=66.67%. 
+If a[0] is aligned at the end of first cache block, this accident will cause a[127] and a[254] be in the same place, which causes the miss rateto be 100%.
+
+
+Problem 3:
+
+Part 1:
+a. 1/(0.4+0.6/4)=1.81; 
+
+b. 1/(0.4+0.6/12)=2.22;
+
+c. 1/(0.4+0.6/infinity)=2.5;
+
+Part 2:
+The  speedup dependson the implementation of the parallel processor and parallel programming techniques. The processors also need to do IO which also costs time.

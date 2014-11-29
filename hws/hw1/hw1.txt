@@ -1,0 +1,35 @@
+Problem 1: Warehouse Scale Computers
+a. True. The latencies between nodes within a large SMP server, i.e. the latencies between processors (or processor cores) are in the order of 100ns, while LAN based communication between nodes of low and pc class server is at the order of 100us, which is a 1000x difference.
+
+b. False. According Table 3.1, the price/performance ratio of a SMP is always larger than a low-end pc. 
+
+c. True. Since WSC must have non-it requirements such as switches, which consumes energy, the total energy consumption if larger than IT-equipment consumption, which make the PUS strictly larger than 1.
+
+d. False. According to the WSC book, "85% of current datacenters were estimated to have a PUE of greater than 3.0". So we can say that most of the power usage within a WSC does not go towards the IT Equipment.
+
+e. False. According to FIGURE 5.6 in WSC book it is not linear, only the power consumption is near linear.
+
+Problem 2: MapReduce Questions
+a. The combiner is a reduce-type function that can pre-combine the outputs of mapper so that less traffic can be generated. 
+
+b. Combiner is an optional component that can increase efficiency. From the view of a reducer, the combiner's output is the same as a mapper, so the combine should have the same output format as the mapper.
+
+c. Yes, it will not wait for the mapper to finish. It will collect certain amount of mapper's output and combine and send it to the reducer.
+
+
+d. When a user types some input, i.e. the key word, the search engine will traverse all records indexed in the database and generate a list of matches. Since examining if a record is a match is irrelevant to other records, this can be done by several servers at the same time. This is a scenario where MapReduce can be used. 
+
+
+e. No. As has been designed, MapReduce in a single phase should run in parallel to each other, and pass input the next phase, not to each other. 
+
+Problem 3: MapReduce Programming
+
+a.  Assume the “concentration” of certain words in an email is related the “goodness” of an email. For every word that can appear in the set of all emails, we first count the number of the word appearing in good emails and the number of appearance in bad emails. For example, if we have 9000 good emails and 1000 emails, and the word “discount” appeared 8 times in good all good emails and 92 times in spam emails, we associate the word “discount” with the value n=8/9000-92/1000. Thus the more frequent the “discount” appears in the good emails, the high n will be, and verse versa. The n value is a representation of the degree of correlation between words and the email.
+
+b.  The mapper receives (Boolean, email text) as the input. Foe every word w in the email, we count the number of appearance x of that word, and emit (w, 1) if the email is not spam and emit (w,-1) for bad emails.
+
+c.  The combiner receives the output of mapper, and will send output to the reducer if it has received and processed a certain number, say 100, of words. For n key-value pairs (w1, 1), it will combine it into (w1, n), and for m key-pairs (w1, -1), it will return (w1, -m) to the reducer.
+
+d.  The reducer takes the input from combiner and maintains a map. The key is each word from combiner, and the value is a tuple (x, y), where x is the sum of all (w, *)’s second value and y is the number of all (w,#)’s second value . Then for each of the word w we also associate it with a number, n = x/(# of good mails)-y/(#of all spam mails). The output of the reducer is pairs of (word, correlation n). The smaller n is, word is more related to be in a spam mail.
+
+

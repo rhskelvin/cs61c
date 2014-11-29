@@ -1,0 +1,55 @@
+CS 61C Homework 6
+Name:
+Login:
+
+
+P1 - Pipelining
+1) 
+2) 
+3) 
+4)
+
+
+
+P2 - Waveform Diagrams
+1)
+2)
+3)
+4)
+
+
+
+P3 - Clock Frequency
+1)
+2)
+3)
+
+
+
+P4 - Simple FSM and Truth Tables
+
+CurState	| Input	| NextState	| Output
+		| 	| 		| 
+		| 	| 		| 
+		| 	| 		| 
+		| 	| 		| 
+		| 	| 		| 
+		| 	| 		| 
+		| 	| 		|  
+
+
+
+
+
+P5 - Truth Tables, Boolean Algebra, FSMs, Logic Circuits
+1)
+
+Out =
+
+Next1 =
+
+Next0 =
+
+2)
+
+

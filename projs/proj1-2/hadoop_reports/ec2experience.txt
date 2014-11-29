@@ -1,0 +1,47 @@
+*1. How long did each of the six runs take? How many mappers and how many reducers did you use?
+	Round		Time(min:s)		mapper1+reducers1		mapper2+reducer2	note
+	1			12:10			210+32					32:1			
+	2			06:34			210+32					32:1
+	3 			15:41			316+32					32:1
+	4  			09:44			316+32					32:1
+	5			10:23			316+32					32:1
+	6			10:38			316+32					32:1
+
+
+*2. For the two runs with (freedom, 0), how much faster did your code run on the 5 workers with the combiner turned on than with the combiner turned off? Express your answer as a percentage.
+	
+	The second task only spend 54.0% of the time the first task took. 
+
+
+*3. For the runs on the 2006 dataset, what was the median processing rate of input for the tests using 5 workers? Using 9 workers? Express your answers in terms of GB/s. (1 GB = 2^30 bytes)
+
+	Round	S3N_BYTES_READ	Bytes_in_GB		Time_in_Seconds		Speed (GB/s)
+	3 		19141789202		17.83			941					0.0189
+	4 		19141807719		17.83			584					0.0305
+	5 		19141889243		17.83			623					0.0286
+	6		19141744757		17.83			638					0.0279
+
+	For 2005: medium = 0.0189GB/s
+	For 2006: medium = 0.0286GB/s
+
+
+*4. How much faster was your run of (capital, 0) with 9 workers over 5 workers? Assuming your code is fully parallelizable, how much faster would a run with 9 workers be compared to a run with 5 workers? Express both numbers as a percentage. How well, in your opinion, does Hadoop parallelize your code? Justify your answer in 1-2 sentences.
+		
+	5 workers: 941s
+	9 workers: 584s
+	Time reduced (941-584)/941= 38.0%
+
+	Ideally: (1/5-1/9)/(1/9) =44.4%
+
+	38% is prety close to 44.4%. Hadoop does a pretty good job on parallalization. 
+
+
+*5. For a single run on the 2006 dataset, what was the price per GB processed on with 5 workers? With 9 workers? (Recall that an extra-large instance costs $0.58 per hour, rounded up to the nearest hour.) Express your answers in terms of dollars/GB.
+	
+	5 Workers: $0.58/h * 1h / 17.83 GB * 5 = $0.1626
+	9 Workers: $0.58/h * 9 * 1h / 17.83 GB = $0.2928
+
+
+*6. How much total money did you use to complete this project?
+
+	$0.58/h * 5 * 1h + $0.58 * 9 * 1h = $8.12

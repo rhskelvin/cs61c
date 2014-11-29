@@ -1,0 +1,3 @@
+1. __m128 _mm_div_ps (__m128 a, __m128 b)
+2. __m64 _m_pmaxub (__m63 a, __m64 b)
+3. MM-128i _m_sll_epi16 (__m128i a, __m128i count)

@@ -1,0 +1,21 @@
+Exercise 1
+    Total Run Time: 14 min
+    S3N_BYTES_READ: 19139828386
+    Mapper output: 23802000968
+    Shuffled: 1443539166
+    oUTPUT: 713488435
+    kILLED MAP: 0
+    Combine output records=713488435;Reduce input records=21926026
+    
+Exercise 2
+    14 MIN
+    Reduce shuffle bytes=1439915654
+    2
+    small: 19139828386/14/1000^2 = 1367MB/S
+    large: 19139814313/7/1000^2 = 2734MB/S
+Exercise 3
+    t=2m25s
+    35.26MB/s
+    strong scaling
+
+10*0.58*14+5*0.58*7＝101.5usd

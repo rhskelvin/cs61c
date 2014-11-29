@@ -1,0 +1,29 @@
+$L3:
+	addu	$5,$7,$2
+	addu	$4,$6,$2
+	sw	$3,0($5)
+	lw	$3,4($4)
+	addiu	$2,$2,4
+	bne	$3,$0,$L3
+
+
+
+$7 dest
+$6 source
+
+$7 and $6 is represent the base assress of dest and source and never changes throughout the loop.
+The value of $5 and $4 stores the value of dest+k and source+k.
+Everything else is self-explanatory.
+
+	addu	$5,$7,$2
+	addu	$4,$6,$2
+	sw	$3,0($5)
+	lw	$3,4($4)
+
+
+lw $t0, 0($a0)
+ori $9, $0, 1
+add $8, $8, $9
+sw $t0, 0($a1)
+addiu $v0,$0,10
+syscall
